@@ -1,4 +1,4 @@
-﻿using ApartmentManagement.Core.Contracts;
+﻿using ApartmentManagement.Core.Services;
 using ApartmentManagement.Core.IUnitOfWorks;
 using ApartmentManagement.Core.Models;
 

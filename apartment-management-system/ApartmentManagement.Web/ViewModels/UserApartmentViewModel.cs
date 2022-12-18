@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+﻿using ApartmentManagement.Core.Models;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace ApartmentManagement.Core.Models.ViewModels
+namespace ApartmentManagement.Core.ViewModels
 {
     public class UserApartmentViewModel
     {

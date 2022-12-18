@@ -1,6 +1,6 @@
-﻿using ApartmentManagement.Core.Contracts;
+﻿using ApartmentManagement.Core.Services;
 using ApartmentManagement.Core.Models;
-using ApartmentManagement.Core.Models.ViewModels;
+using ApartmentManagement.Core.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;

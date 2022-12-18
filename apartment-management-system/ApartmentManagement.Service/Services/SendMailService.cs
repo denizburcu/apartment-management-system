@@ -1,4 +1,4 @@
-﻿using ApartmentManagement.Core.Contracts;
+﻿using ApartmentManagement.Core.Services;
 using ApartmentManagement.Core.Models;
 using ApartmentManagement.Core.Models.Configuration;
 using MailKit.Net.Smtp;

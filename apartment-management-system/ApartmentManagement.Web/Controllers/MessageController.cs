@@ -1,4 +1,4 @@
-﻿using ApartmentManagement.Core.Contracts;
+﻿using ApartmentManagement.Core.Services;
 using ApartmentManagement.Core.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

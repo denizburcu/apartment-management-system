@@ -2,7 +2,7 @@
 using ApartmentManagement.Core.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ApartmentManagement.Core.Contracts
+namespace ApartmentManagement.Core.Services
 {
     public interface IApartmentCostService
     {

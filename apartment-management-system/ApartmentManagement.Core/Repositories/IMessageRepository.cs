@@ -2,7 +2,7 @@
 using ApartmentManagement.Core.Repositories;
 
 
-namespace ApartmentManagement.Core.Contracts
+namespace ApartmentManagement.Core.Services
 {
     public interface IMessageRepository : IGenericRepository<Message>
     {

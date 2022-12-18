@@ -1,6 +1,7 @@
-﻿using Fingers10.ExcelExport.Attributes;
+﻿using ApartmentManagement.Core.Models;
+using Fingers10.ExcelExport.Attributes;
 
-namespace ApartmentManagement.Core.Models.ViewModels
+namespace ApartmentManagement.Core.ViewModels
 {
     public class ExportApartmentCost
     {

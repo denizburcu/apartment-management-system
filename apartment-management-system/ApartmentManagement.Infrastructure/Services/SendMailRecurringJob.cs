@@ -1,4 +1,4 @@
-﻿using ApartmentManagement.Core.Contracts;
+﻿using ApartmentManagement.Core.Services;
 using Hangfire;
 
 namespace ApartmentManagement.Infrastructure.Services

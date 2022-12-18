@@ -1,7 +1,7 @@
 ﻿using ApartmentManagement.Core.Models;
 
 
-namespace ApartmentManagement.Core.Contracts
+namespace ApartmentManagement.Core.Services
 {
     public interface IUserService
     {

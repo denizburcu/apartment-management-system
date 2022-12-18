@@ -1,4 +1,4 @@
-﻿namespace ApartmentManagement.Core.Contracts
+﻿namespace ApartmentManagement.Core.Services
 {
     public interface ISendMailService
     {

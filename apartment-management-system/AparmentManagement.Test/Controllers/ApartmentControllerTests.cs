@@ -1,6 +1,6 @@
-﻿using ApartmentManagement.Core.Contracts;
+﻿using ApartmentManagement.Core.Services;
 using ApartmentManagement.Core.Models;
-using ApartmentManagement.Core.Models.ViewModels;
+using ApartmentManagement.Core.ViewModels;
 using ApartmentManagement.Web.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
