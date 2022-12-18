@@ -56,28 +56,6 @@ password: test
 Aparment Management System requires .net 6.0.x and docker
 
 
-docker mongo installation:
-
-``` yaml
-version: "3.8"
-services:
-  mongo:
-    image: 'mongo'
-    container_name: 'mongodb'
-    ports: 
-      - '27017:27017'
-    volumes: 
-      - data:/data/db
-  mongo-express:
-    image: 'mongo-express'
-    container_name: 'mongo-express'
-    ports: 
-      - '8081:8081'
-volumes: 
-  data:
-  logs:
-```
-
 docker mssql installation:
 
 ```sh
