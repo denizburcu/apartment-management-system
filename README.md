@@ -27,7 +27,7 @@ Project uses below libraries and tech stack
 - [Hangfire] - Recurring job to send email
 - [MailKit] - To send email to users periodically
 - [Syncfusion.PDF] - For pdf report
-- [Fingers10.Excel] - For excel report 
+- [Fingers10.Excel] - For excel report (It works only windows platforms)
 - [PasswordGenerator] - Standart password generator library
 - [Bootstrap] - FE framework for css 
 
