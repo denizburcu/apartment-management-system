@@ -78,6 +78,7 @@ namespace ApartmentManagement.Repository.Seeds
                 ApartmentNumber = 7,
                 Type = "2+1",
                 BlockNumber = 5,
+                UserId = "02174cf0–9412–4cfe-afbf-59f706d72cf6",
                 Status = Status.EMPTY
             },
             new Apartment
