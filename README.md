@@ -58,8 +58,24 @@ Aparment Management System requires .net 6.0.x and docker
 
 docker mongo installation:
 
-```sh
-docker run -it --rm --name mongo-express --link web_db_1:mongo -p 8081:8081 -e ME_CONFIG_MONGODB_URL="mongodb://mongo:27017" -e ME_CONFIG_OPTIONS_EDITORTHEME="ambiance" -e ME_CONFIG_BASICAUTH_USERNAME="user" -e ME_CONFIG_BASICAUTH_PASSWORD="password" mongo-express
+``` yaml
+version: "3.8"
+services:
+  mongo:
+    image: 'mongo'
+    container_name: 'mongodb'
+    ports: 
+      - '27017:27017'
+    volumes: 
+      - data:/data/db
+  mongo-express:
+    image: 'mongo-express'
+    container_name: 'mongo-express'
+    ports: 
+      - '8081:8081'
+volumes: 
+  data:
+  logs:
 ```
 
 docker mssql installation:
