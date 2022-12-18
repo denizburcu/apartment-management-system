@@ -55,16 +55,13 @@ password: test
 
 Aparment Management System requires .net 6.0.x and docker
 
-```sh
-docker run -it --rm --name mongo-express --link web_db_1:mongo -p 8081:8081 -e ME_CONFIG_MONGODB_URL="mongodb://mongo:27017" -e ME_CONFIG_OPTIONS_EDITORTHEME="ambiance" -e ME_CONFIG_BASICAUTH_USERNAME="user" -e ME_CONFIG_BASICAUTH_PASSWORD="password" mongo-express
-```
-
 
 docker mongo installation:
 
 ```sh
 docker run -it --rm --name mongo-express --link web_db_1:mongo -p 8081:8081 -e ME_CONFIG_MONGODB_URL="mongodb://mongo:27017" -e ME_CONFIG_OPTIONS_EDITORTHEME="ambiance" -e ME_CONFIG_BASICAUTH_USERNAME="user" -e ME_CONFIG_BASICAUTH_PASSWORD="password" mongo-express
 ```
+
 docker mssql installation:
 
 ```sh
@@ -72,9 +69,7 @@ docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=MyPass@word" -e "MSSQL_PID=Express
 ```
 First Run: 
 credit-card-service
-```sh
-dotnet watch run --project CreditCardService
-```
+
 ```sh
 https://localhost:44379/swagger/index.html
 ```
@@ -85,9 +80,6 @@ add-migration initial
 ```
 ```sh
 update-database
-```
-```sh
-dotnet watch run --project ApartmentManagementService.Web
 ```
 ```sh
 https://localhost:44396/
