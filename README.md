@@ -14,6 +14,7 @@
 - Users can login system with the password that admin gave him/her.
 - System automatically sends email daily for unpaid costs.
 - Users can send messages to Admin and can see messages read or not.
+- Users can pay their apartment costs.
 
 ## Tech Stack
 Project uses below libraries and tech stack
