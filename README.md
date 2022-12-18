@@ -22,6 +22,7 @@ Project uses below libraries and tech stack
 - [.Net Identity] - for user authentication and authorization
 - [MsSQL] - Relational databse for apartment-management-system
 - [MongoDB] - Document based database for credit-card-service
+- [Atlas] - Cloud Mongo db
 - [XUnit] - Testing tool
 - [Moq] - Mocking framework for unit testing
 - [Hangfire] - Recurring job to send email
