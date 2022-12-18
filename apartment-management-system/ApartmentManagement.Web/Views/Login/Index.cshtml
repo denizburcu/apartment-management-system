@@ -1,0 +1,29 @@
+﻿@using ApartmentManagement.Web.ViewModels
+
+@model UserLoginViewModel
+
+
+<h1>Giriş</h1>
+<form method="post">
+	<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label">E-posta</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label">Şifre</label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <button type="submit" class="btn btn-outline-success" style="width:150px" asp-action="Index">Giriş Yap</button>
+            </div>
+        </form>
+    </div>
+</div>
+</form>

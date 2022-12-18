@@ -1,0 +1,42 @@
+﻿@using ApartmentManagement.Core.Models
+@using System.Security.Claims
+@using ApartmentManagement.Web.ViewModels
+@using Microsoft.AspNetCore.Identity
+
+@inject UserManager<User> UserManager
+@model ApartmentCostPayViewModel
+
+<form method="post">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Yeni Aidat ya da Fatura Ekle</h2>
+			<hr />
+		</div>
+		<div asp-validation-summary="All" class="text-danger"></div>
+		<input asp-for="ApartmentCost.Id" hidden />
+		<div class="mb-3">
+			<label asp-for="ApartmentCost.Amount">Tutar</label>
+			<input asp-for="ApartmentCost.Amount" disabled value="@Model.ApartmentCost.Amount" class="form-control" />
+		</div>
+		<div class="mb-3 col-6">
+			<label asp-for="ApartmentCost.CostType">Fatura Tipi</label>
+			<input asp-for="ApartmentCost.CostType" disabled value="@Model.ApartmentCost.CostType" class="form-control" />
+		</div>
+		<div class="mb-3 col-6">
+			<label asp-for="PaymentDto.CardNumber">Kredit Kartı No</label>
+			<input asp-for="PaymentDto.CardNumber" class="form-control" />
+		</div>
+		<div class="mb-3 col-6">
+			<label asp-for="PaymentDto.CvcCvv">CVC/CVV</label>
+			<input asp-for="PaymentDto.CvcCvv" class="form-control" />
+		</div>
+		<div class="mb-3 col-6">
+			<label asp-for="PaymentDto.ExpireDate">Son Kullanma Tarihi</label>
+			<input asp-for="PaymentDto.ExpireDate" class="form-control" />
+		</div>
+		<button type="submit" class="btn btn-primary" style="width:150px" asp-action="Pay">Faturayı Öde</button>
+		<a asp-controller="ApartmentCost" asp-action="Index" class="btn btn-secondary" style="width:200px">
+			Faturalar
+		</a>
+	</div>
+</form>

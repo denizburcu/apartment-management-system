@@ -1,0 +1,95 @@
+﻿@using ApartmentManagement.Core.Models
+
+@model IEnumerable<Apartment>
+
+<div class="container p-3">
+	<div class="row pt-4">
+		<div class="col-6">
+			<h2 class="text-primary">Daire Listesi</h2>
+		</div>
+		<div class="col-6 text-end">
+			<a asp-controller="Apartment" asp-action="Create" class="btn btn-primary">
+				<i class="bi bi-plus-circle"></i> &nbsp; Yeni Daire Ekle
+			</a>
+		</div>
+	</div>
+	<br /><br />
+
+	<table class="table table-bordered table-striped" style="width:100%">
+		<thead>
+			<tr>
+				<th>
+					Daire Numarası
+				</th>
+				<th>
+					Blok No
+				</th>
+				<th>
+					Kat
+				</th>
+				<th>
+					Tipi
+				</th>
+				<th>
+					Durumu
+				</th>
+				<th>
+					İkamet Eden
+				</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var apartment in Model)
+			{
+				<tr>
+					<td width="10%">
+						@apartment.ApartmentNumber
+					</td>
+					<td width="10%">
+						@apartment.BlockNumber
+					</td>
+					<td width="10%">
+						@apartment.Floor
+					</td>
+					<td width="10%">
+						@apartment.Type
+					</td>
+					@if (apartment.Status == Status.EMPTY)
+					{
+						<td width="10%">
+							BOŞ
+						</td>
+					}
+					else
+					{
+						<td width="10%">
+							DOLU
+						</td>
+					}
+					@if (apartment.UserId == null)
+					{
+						<td width="20%">
+							-
+						</td>
+					}
+					else
+					{
+						<td width="20%">
+							@apartment.User.Name  @apartment.User.LastName
+						</td>
+					}
+					<td width="10%">
+						<div class="w-75 btn-group" role="group">
+							<a asp-controller="Apartment" asp-action="Edit" asp-route-id="@apartment.Id"
+						   class="btn btn-primary mx-2"> <i class="bi bi-pencil-square"></i>Güncelle</a>
+							<a asp-controller="Apartment" asp-action="Delete" asp-route-id="@apartment.Id"
+						   class="btn btn-danger mx-2"> <i class="bi bi-trash-fill"></i>Sil</a>
+						</div>
+					</td>
+				</tr>
+			}
+		</tbody>
+
+	</table>
+</div>

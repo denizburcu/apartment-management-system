@@ -1,0 +1,58 @@
+﻿@using ApartmentManagement.Core.Models.ViewModels
+
+@model UserApartmentViewModel
+
+<form method="post">
+	<input asp-for="Apartment.Id" hidden />
+
+	<div class="row">
+		<div class="col-10">
+			<div class="border p-3 mt-4 row">
+		<div class="col-12 pb-2">
+			<h2 class="text-primary">Daireyi Düzenle</h2>
+			<hr />
+		</div>
+		@*<div asp-validation-summary="All"></div>*@
+		<div class="mb-3">
+			<label asp-for="Apartment.ApartmentNumber">Daire Numarası</label>
+			<input asp-for="Apartment.ApartmentNumber" class="form-control" />
+			<span asp-validation-for="Apartment.ApartmentNumber" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Apartment.BlockNumber">Blok No</label>
+			<input asp-for="Apartment.BlockNumber" rows="3" class="form-control"/>
+			<span asp-validation-for="Apartment.BlockNumber" class="text-danger"></span>
+		</div>
+		<div class="mb-3 col-6">
+			<label asp-for="Apartment.Type">Tip</label>
+			<input asp-for="Apartment.Type" class="form-control" />
+			<span asp-validation-for="Apartment.Type" class="text-danger"></span>
+		</div>
+		<div class="mb-3 col-6">
+			<label asp-for="Apartment.Floor">Kat</label>
+			<input asp-for="Apartment.Floor" class="form-control" />
+			<span asp-validation-for="Apartment.Floor" class="text-danger"></span>
+		</div>
+
+		<div class="mb-3 col-6">
+			<label asp-for="Apartment.UserId"> İkamet Eden</label>
+			<select asp-for="Apartment.UserId" asp-items="@Model.AparmentUsers" class="form-select">
+				<option value="">Seç</option>
+			</select>
+		</div>
+		<div class="col-12">
+			<button type="submit" class="btn btn-primary" style="width:150px" asp-action="Edit">Düzenle</button>
+			
+			<a asp-controller="Apartment" asp-action="Index" class="btn btn-secondary" style="width:150px">
+				Daireler
+			</a>
+		</div>
+	</div>
+
+</form>
+
+@section Scripts{
+	@{
+	<partial name="_ValidationScriptsPartial" />
+	}
+}

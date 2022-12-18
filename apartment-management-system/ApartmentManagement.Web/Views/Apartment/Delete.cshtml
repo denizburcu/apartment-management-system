@@ -1,0 +1,39 @@
+﻿@using ApartmentManagement.Core.Models
+
+@model Apartment
+
+<form method="post">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Daireyi sil</h2>
+			<hr />
+		</div>
+		<div asp-validation-summary="All"></div>
+		<div class="mb-3">
+			<label asp-for="ApartmentNumber">Daire Numarası</label>
+			<input asp-for="ApartmentNumber" disabled class="form-control" />
+			<span asp-validation-for="ApartmentNumber" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="BlockNumber">Blok No</label>
+			<input asp-for="BlockNumber" disabled class="form-control" />
+			<span asp-validation-for="BlockNumber" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Type">Tip</label>
+			<input asp-for="Type" disabled class="form-control" />
+			<span asp-validation-for="Type" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Floor">Kat</label>
+			<input asp-for="Floor" disabled class="form-control" />
+			<span asp-validation-for="Floor" class="text-danger"></span>
+		</div>
+
+
+		<button type="submit" class="btn btn-danger" style="width:150px" asp-action="Delete">Sil</button>
+		<a asp-controller="Apartment" asp-action="Index" class="btn btn-secondary" style="width:150px">
+			Daireler
+		</a>
+	</div>
+</form>

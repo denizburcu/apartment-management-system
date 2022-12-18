@@ -1,0 +1,42 @@
+﻿@using ApartmentManagement.Core.Models
+
+@model User
+
+@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+
+@if(Model != null)
+{
+    <div class="text-center">
+        <h1 class="display-4">Sayın @Model.Name, Apartman Yönetim Sistemine Hoş geldiniz.</h1>
+    </div>
+    @if(Model.Apartment != null){
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Adresiniz</h5>
+            <br>
+            <p class="card-text">Blok No : @Model.Apartment.BlockNumber </p>
+            <p class="card-text">Kat No : @Model.Apartment.Floor </p>
+            <p class="card-text">Daire No : @Model.Apartment.ApartmentNumber </p>
+            <p class="card-text">Daire Tipi : @Model.Apartment.Type </p>
+          </div>
+        </div>
+    }else{
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Adresiniz</h5>
+            <br>
+            <p class="card-text">Henüz daireniz atanmadı. Lütfen yöneticiye danışın.</p>
+          </div>
+        </div>
+    }
+}
+else
+{
+    <div class="text-center">
+        <h1 class="display-4">Apartman Yönetim Sistemine Hoş geldiniz</h1>
+        <p>Lütfen giriş yapınız.</p>
+    </div>
+}
+

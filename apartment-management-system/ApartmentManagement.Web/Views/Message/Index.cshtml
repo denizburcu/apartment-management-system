@@ -1,0 +1,83 @@
+﻿@using ApartmentManagement.Core.Models
+
+
+@model IEnumerable<Message>
+
+<div class="container p-3">
+	<div class="row pt-4">
+		<div class="col-6">
+			<h2 class="text-primary">Mesajlar</h2>
+		</div>
+		@if (User.IsInRole("User"))
+		{
+			<div class="col-6 text-end">
+				<a asp-controller="Message" asp-action="Create" class="btn btn-primary">
+					<i class="bi bi-plus-circle"></i> &nbsp; Yeni Mesaj Gönder
+				</a>
+			</div>
+		}
+	</div>
+	<br /><br />
+
+	<table class="table table-bordered table-striped" style="width:100%">
+		<thead>
+			<tr>
+				@if (User.IsInRole("Admin"))
+				{
+					<th>
+						Gönderen
+					</th>
+				}
+				<th>
+					Mesaj
+				</th>
+				<th>
+					Durum
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var message in Model)
+			{
+				<tr>
+					@if (User.IsInRole("Admin"))
+					{
+						<td width="10%">
+							@message.User.Name @message.User.LastName
+						</td>
+					}
+					<td width="10%">
+						@message.Description
+					</td>
+					@if (message.Status== MessageStatus.NEW)
+					{
+						<td width="10%">
+							Yeni
+						</td>
+					}
+					else if(message.Status == MessageStatus.NOT_READ)
+					{
+						<td width="10%">
+							Okunmadı
+						</td>
+					}
+					else
+					{
+						<td width="10%">
+							Okundu
+						</td>
+					}
+					@if(User.IsInRole("Admin")){
+						<td width="10%">
+							<div class="w-75 btn-group" role="group">
+								<a asp-controller="Message" asp-action="Details" asp-route-id="@message.Id"
+							   class="btn btn-primary mx-2"> <i class="bi bi-trash-fill"></i>Oku</a>
+							</div>
+						</td>
+					}
+				</tr>
+			}
+		</tbody>
+
+	</table>
+</div>

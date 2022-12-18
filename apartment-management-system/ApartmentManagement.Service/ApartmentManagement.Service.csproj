@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspose.PDF" Version="22.11.0" />
+    <PackageReference Include="Fingers10.ExcelExport" Version="3.0.1" />
+    <PackageReference Include="NETCore.MailKit" Version="2.1.0" />
+    <PackageReference Include="Syncfusion.Pdf.Net.Core" Version="20.3.0.61" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ApartmentManagement.Repository\ApartmentManagement.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

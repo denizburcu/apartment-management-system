@@ -1,0 +1,28 @@
+﻿@using ApartmentManagement.Core.Models
+@using System.Security.Claims
+@using Microsoft.AspNetCore.Identity
+
+@inject UserManager<User> UserManager
+@model Message
+
+<form method="post">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Yeni Mesaj Gönder</h2>
+			<hr />
+		</div>
+		<div asp-validation-summary="All" class="text-danger"></div>
+		<div class="mb-3">
+			<input asp-for="UserId" hidden class="form-control" value="@UserManager.GetUserId(User)"/>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Description">İçerik</label>
+			<textarea asp-for="Description" class="form-control"> </textarea>
+		</div>
+
+		<button type="submit" class="btn btn-primary" style="width:150px" asp-action="Create">Gönder</button>
+		<a asp-controller="Message" asp-action="Index" class="btn btn-secondary" style="width:150px">
+			Mesajlar
+		</a>
+	</div>
+</form>

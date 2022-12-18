@@ -1,0 +1,43 @@
+﻿@using ApartmentManagement.Core.Models
+@using System.Security.Claims
+@using ApartmentManagement.Web.ViewModels
+@using Microsoft.AspNetCore.Identity
+
+@inject UserManager<User> UserManager
+@model ApartmentCostViewModel
+
+<form method="post">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Yeni Aidat ya da Fatura Ekle</h2>
+			<hr />
+		</div>
+		<div asp-validation-summary="All" class="text-danger"></div>
+		<div class="mb-3">
+			<label asp-for="ApartmentCost.Amount">Tutar</label>
+			<input asp-for="ApartmentCost.Amount" class="form-control" />
+		</div>
+		<div class="mb-3 col-6">
+			<label asp-for="ApartmentCost.ApartmentId">Daire</label>
+			<select asp-for="ApartmentCost.ApartmentId" asp-items="@Model.Apartments" class="form-select">
+				<option value="">Seç</option>
+			</select>
+		</div>
+		<div class="mb-3 col-6">
+			<label asp-for="ApartmentCost.CostType">Fatura Tipini</label>
+			<select asp-for="ApartmentCost.CostType" asp-items="@Model.Types" class="form-select">
+				<option value="">Seç</option>
+			</select>
+		</div>
+		<div class="mb-3 col-6">
+			<label asp-for="ApartmentCost.Month">Fatura Ayı</label>
+			<select asp-for="ApartmentCost.Month" asp-items="@Model.Months" class="form-select">
+				<option value="">Seç</option>
+			</select>
+		</div>
+		<button type="submit" class="btn btn-primary" style="width:150px" asp-action="Create">Faturayı Ata</button>
+		<a asp-controller="ApartmentCost" asp-action="Index" class="btn btn-secondary" style="width:200px">
+			Faturalar
+		</a>
+	</div>
+</form>

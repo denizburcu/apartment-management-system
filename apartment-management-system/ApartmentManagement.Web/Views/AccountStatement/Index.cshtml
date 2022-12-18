@@ -1,0 +1,80 @@
+﻿@using ApartmentManagement.Web.ViewModels
+
+@model ApartmentCostExportViewModel
+
+
+<div class="container p-3">
+	<div class="row pt-4">
+		<div class="col-6">
+			<h2 class="text-primary">Faturaları Listele</h2>
+		</div>
+	</div>
+	<br />
+
+	<form method="post">
+			<div class="col-3">
+				<select asp-for="@Model.SelectedFileType" asp-items="@Model.ExportFileTypes" class="form-select">
+				</select>
+			</div>
+			<br />
+			<div class="col-3">
+					<button type="submit" class="btn btn-outline-warning" style="width:150px" asp-action="Index">Export Et</button>
+			</div>
+	</form>
+
+	<br />
+
+	<table class="table table-bordered table-striped" style="width:100%">
+		<thead>
+			<tr>
+				<th>
+					Fatura Tipi
+				</th>
+				<th>
+					Ödenecek Tutar
+				</th>
+				<th>
+					Durum
+				</th>
+				<th>
+					Ay
+				</th>
+				<th>
+					Blok No/Kat No/Daire No
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var apartmentCost in Model.ApartmentCosts)
+			{
+				<tr>
+					<td width="10%">
+						@apartmentCost.CostType
+					</td>
+					<td width="10%">
+						@apartmentCost.Amount
+					</td>
+					@if (apartmentCost.IsPaid)
+					{
+						<td width="10%">
+							ODENDI
+						</td>
+					}
+					else
+					{
+						<td width="10%">
+							ODENMEMIS
+						</td>
+					}
+					<td width="10%">
+						@apartmentCost.Month
+					</td>
+					<td width="10%">
+						@apartmentCost.Apartment.BlockNumber/@apartmentCost.Apartment.Floor/@apartmentCost.Apartment.ApartmentNumber
+					</td>
+				</tr>
+			}
+		</tbody>
+
+	</table>
+</div>

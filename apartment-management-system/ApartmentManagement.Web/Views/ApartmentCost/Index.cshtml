@@ -1,0 +1,100 @@
+﻿@using ApartmentManagement.Web.ViewModels
+
+@model ApartmentCostMonthViewModel
+@{
+    TempData["SelectedMonth"] = 10;
+}
+
+<div class="container p-3">
+	<div class="row pt-4">
+		<div class="col-6">
+			<h2 class="text-primary">Faturaları Listele</h2>
+		</div>
+		@if (User.IsInRole("Admin"))
+		{
+			<div class="col-6 text-end">
+				<a asp-controller="ApartmentCost" asp-action="Create" class="btn btn-primary">
+					<i class="bi bi-plus-circle"></i> &nbsp; Ekle
+				</a>
+			</div>
+		}
+	</div>
+	<br />
+	@if (User.IsInRole("Admin"))
+	{
+		<form method="post">
+			<div class="col-3">
+				<select asp-for="@Model.SelectedMonth" asp-items="@Model.Months" class="form-select">
+				</select>
+			</div>
+			<div class="col-2">
+					<button type="submit" class="btn btn-outline-warning" style="width:150px" asp-action="Index">Listele</button>
+			</div>
+		</form>
+	}
+	
+
+	<br />
+
+	<table class="table table-bordered table-striped" style="width:100%">
+		<thead>
+			<tr>
+				<th>
+					Fatura Tipi
+				</th>
+				<th>
+					Ödenecek Tutar
+				</th>
+				<th>
+					Durum
+				</th>
+				<th>
+					Ay
+				</th>
+				<th>
+					Blok No/Kat No/Daire No
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var apartmentCost in Model.ApartmentCosts)
+			{
+				<tr>
+					<td width="10%">
+						@apartmentCost.CostType
+					</td>
+					<td width="10%">
+						@apartmentCost.Amount
+					</td>
+					@if (apartmentCost.IsPaid)
+					{
+						<td width="10%">
+							ODENDI
+						</td>
+					}
+					else
+					{
+						<td width="10%">
+							ODENMEMIS
+						</td>
+					}
+					<td width="10%">
+						@apartmentCost.Month
+					</td>
+					<td width="10%">
+						@apartmentCost.Apartment.BlockNumber/@apartmentCost.Apartment.Floor/@apartmentCost.Apartment.ApartmentNumber
+					</td>
+					<td width="5%">
+						@if (User.IsInRole("User") && !apartmentCost.IsPaid)
+						{
+							<a asp-controller="ApartmentCost" asp-action="Pay" class="btn btn-secondary" asp-route-id="@apartmentCost.Id" style="width:150px">
+								Öde
+							</a>
+						}
+					</td>
+				</tr>
+			}
+		</tbody>
+
+	</table>
+</div>

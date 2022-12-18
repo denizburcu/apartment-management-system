@@ -1,0 +1,56 @@
+﻿@using ApartmentManagement.Core.Models
+
+@model User
+
+<form method="post">
+	<input asp-for="Id" hidden />
+
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Sil</h2>
+			<hr />
+		</div>
+		<div asp-validation-summary="All"></div>
+		<div class="mb-3">
+			<label asp-for="Name">İsim</label>
+			<input asp-for="Name" disabled class="form-control" />
+			<span asp-validation-for="Name" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="LastName">Soyisim</label>
+			<input asp-for="LastName" disabled class="form-control" />
+			<span asp-validation-for="LastName" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="IdentityNumber">T.C Kimlik No</label>
+			<input asp-for="IdentityNumber" disabled class="form-control" />
+			<span asp-validation-for="IdentityNumber" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="PhoneNumber">Telefon</label>
+			<input asp-for="PhoneNumber" disabled class="form-control" />
+			<span asp-validation-for="PhoneNumber" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Email">Email</label>
+			<input asp-for="Email" disabled class="form-control" />
+			<span asp-validation-for="Email" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="UserName">Kullanıcı Adı</label>
+			<input asp-for="UserName" disabled class="form-control" />
+			<span asp-validation-for="UserName" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="PlateNumber">Araba Plakası</label>
+			<input asp-for="PlateNumber" disabled class="form-control" />
+			<span asp-validation-for="PlateNumber" class="text-danger"></span>
+		</div>
+
+
+		<button type="submit" class="btn btn-danger" style="width:150px" asp-route-id="Id" asp-action="Delete">Sil</button>
+		<a asp-controller="User" asp-action="Index" class="btn btn-secondary" style="width:250px">
+			Apartman Sakinleri
+		</a>
+	</div>
+</form>

@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApartmentManagement.Web", "ApartmentManagement.Web.csproj", "{0B28BB4E-1E0B-411C-9BA5-A701E4CE6A5B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApartmentManagement.Core", "..\ApartmentManagement.Core\ApartmentManagement.Core.csproj", "{690B8932-5823-4017-913F-457B96C1E53B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApartmentManagement.Service", "..\ApartmentManagement.Service\ApartmentManagement.Service.csproj", "{A7CC50F4-49AC-4CEB-9459-C6E00BD4A121}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApartmentManagement.Repository", "..\ApartmentManagement.Repository\ApartmentManagement.Repository.csproj", "{A8229C8B-A723-422F-B0FC-601AB4A58468}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApartmentManagement.Infrastructure", "..\ApartmentManagement.Infrastructure\ApartmentManagement.Infrastructure.csproj", "{A7FF4465-2F4B-4A6A-B5FF-96949E3B20B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AparmentManagement.Test", "..\AparmentManagement.Test\AparmentManagement.Test.csproj", "{C8294424-2198-42CA-89D5-39AB8A2B339E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B28BB4E-1E0B-411C-9BA5-A701E4CE6A5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B28BB4E-1E0B-411C-9BA5-A701E4CE6A5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B28BB4E-1E0B-411C-9BA5-A701E4CE6A5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B28BB4E-1E0B-411C-9BA5-A701E4CE6A5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{690B8932-5823-4017-913F-457B96C1E53B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{690B8932-5823-4017-913F-457B96C1E53B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{690B8932-5823-4017-913F-457B96C1E53B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{690B8932-5823-4017-913F-457B96C1E53B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7CC50F4-49AC-4CEB-9459-C6E00BD4A121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7CC50F4-49AC-4CEB-9459-C6E00BD4A121}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7CC50F4-49AC-4CEB-9459-C6E00BD4A121}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7CC50F4-49AC-4CEB-9459-C6E00BD4A121}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8229C8B-A723-422F-B0FC-601AB4A58468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8229C8B-A723-422F-B0FC-601AB4A58468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8229C8B-A723-422F-B0FC-601AB4A58468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8229C8B-A723-422F-B0FC-601AB4A58468}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7FF4465-2F4B-4A6A-B5FF-96949E3B20B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7FF4465-2F4B-4A6A-B5FF-96949E3B20B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7FF4465-2F4B-4A6A-B5FF-96949E3B20B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7FF4465-2F4B-4A6A-B5FF-96949E3B20B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8294424-2198-42CA-89D5-39AB8A2B339E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8294424-2198-42CA-89D5-39AB8A2B339E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8294424-2198-42CA-89D5-39AB8A2B339E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8294424-2198-42CA-89D5-39AB8A2B339E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E151F56B-4285-435F-9C59-20F88720570D}
+	EndGlobalSection
+EndGlobal

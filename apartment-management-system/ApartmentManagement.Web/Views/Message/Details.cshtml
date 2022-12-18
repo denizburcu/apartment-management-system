@@ -1,0 +1,25 @@
+﻿@using ApartmentManagement.Core.Models
+
+@model Message
+
+<form method="post">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Mesaj</h2>
+			<hr />
+		</div>
+		<div class="mb-3">
+			<label asp-for="Description">İçerik</label>
+			<textarea asp-for="Description" disabled class="form-control"> </textarea>
+		</div>
+		<div class="mb-3">
+			<label asp-for="User.Name">Gönderen Kişi</label>
+			<input asp-for="User.Name" disabled class="form-control" />
+		</div>
+
+		<a asp-controller="Message" asp-action="Index" class="btn btn-secondary" style="width:150px">
+			Mesajlar
+		</a>
+	</div>
+</form>
+
